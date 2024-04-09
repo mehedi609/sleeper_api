@@ -23,7 +23,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
       throw new NotFoundException('Document not found.');
     }
 
-    // @ts-ignore
+    // @ts-expect-error
     return document;
   }
 
