@@ -24,8 +24,12 @@
       "@app/common/*": [
         "libs/common/src/*"
       ],
-      "@": ["src"],
-      "@/*": ["src/*"]
+      "@reservations": [
+        "apps/reservations/src"
+      ],
+      "@reservations/*": [
+        "apps/reservations/src/*"
+      ]
     }
   }
 }
