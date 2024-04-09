@@ -4,12 +4,10 @@ import { Logger } from 'nestjs-pino';
 import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
-  const app = await NestFactory.create(ReservationsModule, {
-    bufferLogs: true,
-  });
-  await app.listen(5000);
-  app.useGlobalPipes(new ValidationPipe());
+  const app = await NestFactory.create(ReservationsModule);
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   app.useLogger(app.get(Logger));
+  await app.listen(5000);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
