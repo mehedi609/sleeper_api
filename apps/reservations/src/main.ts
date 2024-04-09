@@ -3,6 +3,7 @@ import { ReservationsModule } from '@reservations/reservations.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(ReservationsModule);
-  await app.listen(3000);
+  await app.listen(5000);
+  console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
